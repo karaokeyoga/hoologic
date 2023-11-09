@@ -1,0 +1,10 @@
+*.min.js
+
+.cache
+build
+node_modules
+package-lock.json
+public
+server
+static
+tsconfig.json

@@ -1,0 +1,6 @@
+*.json
+
+.cache
+node_modules
+public
+static
