@@ -42,8 +42,13 @@ export const Posts: FC<_PostsProps> = ({ posts: initialPosts }) => {
   useEffect(() => (masonryRef.current as any).masonry.layout(), [masonryRef, size])
 
   const filteredPosts = useMemo(
-    () => (pathname === PATHNAME_PERSON ? posts : pathname === PATHNAME_ROOT ? [posts[posts.length - 1], ...posts.slice(0, -1)] : posts.slice(0, -1)),
-    [pathname, posts]
+    () =>
+      mounted === 'posts' || pathname === PATHNAME_PERSON
+        ? posts
+        : pathname === PATHNAME_ROOT
+        ? [posts[posts.length - 1], ...posts.slice(0, -1)]
+        : posts.slice(0, -1),
+    [pathname, posts] // eslint-disable-line react-hooks/exhaustive-deps
   )
 
   return (
