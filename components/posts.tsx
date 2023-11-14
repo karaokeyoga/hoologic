@@ -38,7 +38,6 @@ export const Posts: FC<_PostsProps> = ({ posts: initialPosts }) => {
     const postIndex = posts.findIndex(post => post.slug.current === pathname.slice(1))
 
     if (postIndex !== -1 && postIndex !== posts.length - 1) {
-      console.log('postIndex', postIndex)
       setPosts(posts.filter((_, index) => index !== postIndex).concat(posts[postIndex]))
     }
   }, [pathname, posts, setPosts])
