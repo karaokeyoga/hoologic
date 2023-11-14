@@ -27,6 +27,7 @@ export const Posts: FC<_PostsProps> = ({ posts: initialPosts }) => {
   const { masonryRef, posts, setPosts } = useHooks(initialPosts)
   const pathname = usePathname()
   const [mounted, setMounted] = useState('posts')
+  const mountedRef = useRef('posts')
   const size = useWindowSize()
 
   useEffect(() => {
@@ -35,20 +36,24 @@ export const Posts: FC<_PostsProps> = ({ posts: initialPosts }) => {
     if (postIndex !== -1 && postIndex !== posts.length - 1) {
       setPosts(posts.filter((_, index) => index !== postIndex).concat(posts[postIndex]))
     }
-  }, [mounted, pathname, posts, setPosts])
+  }, [pathname, posts, setPosts])
 
   useEffect(() => setMounted('posts posts--mounted'), [])
+
+  useEffect(() => {
+    mountedRef.current = 'posts posts--mounted'
+  }, [])
 
   useEffect(() => (masonryRef.current as any).masonry.layout(), [masonryRef, size])
 
   const filteredPosts = useMemo(
     () =>
-      mounted === 'posts' || pathname === PATHNAME_PERSON
+      mountedRef.current === 'posts' || pathname === PATHNAME_PERSON
         ? posts
         : pathname === PATHNAME_ROOT
         ? [posts[posts.length - 1], ...posts.slice(0, -1)]
         : posts.slice(0, -1),
-    [pathname, posts] // eslint-disable-line react-hooks/exhaustive-deps
+    [pathname, posts]
   )
 
   return (
