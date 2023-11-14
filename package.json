@@ -16,7 +16,7 @@
     "react-masonry-component": "6.3.0"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "14.0.1",
+    "@next/eslint-plugin-next": "14.0.2",
     "@portabletext/react": "3.0.11",
     "@sanity/client": "6.7.1",
     "@types/lodash": "^4.14.200",
