@@ -1,4 +1,4 @@
-import { PATHNAME_ROOT } from '@/utilities/constants'
+import { PATHNAME_ROOT } from '@/utilities/general'
 import type { Metadata } from 'next/types'
 import { FC } from 'react'
 
