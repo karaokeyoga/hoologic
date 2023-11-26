@@ -4,7 +4,6 @@ import { Summary } from '@/components/summary'
 import { PATHNAME_ABOUT, PATHNAME_PERSON, PATHNAME_ROOT } from '@/utilities/general'
 import type { _Post } from '@/utilities/types'
 import { Box } from '@mui/material'
-// import { useWindowSize } from '@react-hook/window-size'
 import { usePathname } from 'next/navigation'
 import React, { FC, useEffect, useMemo, useRef, useState } from 'react'
 import Masonry from 'react-masonry-component'
@@ -13,21 +12,12 @@ import Masonry from 'react-masonry-component'
 
 type _PostsProps = { posts: _Post[] }
 
-// hooks
-
-const useHooks = (initialPosts: _Post[]) => {
-  const masonryRef = useRef()
-  const [posts, setPosts] = useState(initialPosts)
-
-  return { masonryRef, posts, setPosts }
-}
-
 // components
 
 export const Posts: FC<_PostsProps> = ({ posts: initialPosts }) => {
-  const { masonryRef, posts, setPosts } = useHooks(initialPosts)
   const pathname = usePathname()
-  // const size = useWindowSize()
+  const masonryRef = useRef()
+  const [posts, setPosts] = useState(initialPosts)
 
   useEffect(() => {
     if (pathname === PATHNAME_ROOT) {
@@ -43,19 +33,13 @@ export const Posts: FC<_PostsProps> = ({ posts: initialPosts }) => {
     }
   }, [pathname, posts, setPosts])
 
-  // useEffect(() => {
-  //   const timer = setTimeout((masonryRef.current as any).masonry.layout, 5000)
-
-  //   return () => clearTimeout(timer)
-  // }, [masonryRef, size])
-
   const filteredPosts = useMemo(() => ([PATHNAME_ABOUT, PATHNAME_PERSON, PATHNAME_ROOT].includes(pathname) ? posts : posts.slice(0, -1)), [pathname, posts])
 
   return (
     <Box sx={{ maxWidth: '100%', mb: 3.25, minWidth: 320, mx: 'auto' }}>
       <Masonry ref={masonryRef}>
         {filteredPosts.map(post => (
-          <Summary classes="summary" isLink key={post._id} post={post} />
+          <Summary isLink key={post._id} post={post} />
         ))}
       </Masonry>
     </Box>

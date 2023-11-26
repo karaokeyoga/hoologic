@@ -65,16 +65,14 @@ const Css: FC<_CssProps> = ({ css }) => (css ? <style>{css}</style> : null)
 
 const Extra: FC<_ExtraProps> = ({ mounted, post, postPosition }) =>
   post.extra ? (
-    <Box className={getClasses('extra', mounted, postPosition)}>
-      <Box className="extra__div" sx={SX_CONTENT}>
-        <PortableText components={SERIALIZERS} value={post.extra} />
-      </Box>
+    <Box className={getClasses('extra', mounted, postPosition)} sx={SX_CONTENT}>
+      <PortableText components={SERIALIZERS} value={post.extra} />
     </Box>
   ) : null
 
 const Html: FC<_HtmlProps> = ({ html }) => (html ? <Box dangerouslySetInnerHTML={{ __html: html }} /> : null)
 
-const Title: FC<_TitleProps> = ({ title, titleInBody }) => (titleInBody ? <h2 className="detail__heading">{title}</h2> : null)
+const Title: FC<_TitleProps> = ({ title, titleInBody }) => (titleInBody ? <h2 className="post__heading">{title}</h2> : null)
 
 // components
 
@@ -93,14 +91,14 @@ export const Post: FC<_PostProps> = ({ post }) => {
 
   return (
     <>
-      <Box className="detail">
+      <Box className="post">
         <Css css={post.css} />
 
         <Summary classes={getClasses('summary', mounted, postPosition)} post={post} styles={styles(allRef, mounted, postPosition)} />
 
         <Extra mounted={mounted} post={post} postPosition={postPosition} />
 
-        <Box className={getClasses('detail__content', mounted, postPosition, post.centerBody)} sx={SX_CONTENT}>
+        <Box className={getClasses('post__content', mounted, postPosition, post.centerBody)} sx={SX_CONTENT}>
           <Title title={post.title} titleInBody={post.titleInBody} />
 
           <Block blocks={post.body} />

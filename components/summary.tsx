@@ -14,7 +14,7 @@ import React, { Dispatch, FC, MouseEvent, ReactNode, SetStateAction, useState } 
 
 type _ConditionalLinkProps = { children: ReactNode; currentLink: string; isLink: boolean; post: any; setCurrentLink: Dispatch<SetStateAction<string>> }
 type _DescriptionProps = { description: any }
-type _SummaryProps = { classes: string; isLink?: boolean; post: _Post; styles?: any }
+type _SummaryProps = { classes?: string; isLink?: boolean; post: _Post; styles?: any }
 type _TitleProps = { isTitleInBody: boolean; title: string }
 
 // components
