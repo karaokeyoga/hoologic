@@ -1,7 +1,7 @@
 import { SERIALIZERS } from '@/components/serializers'
 import { useAppContext } from '@/hooks/useAppContext'
 import { sanityImageUrl } from '@/utilities/sanity'
-import { BLACK, WHITE } from '@/utilities/styles'
+import { BLACK, SX_CONTENT, WHITE } from '@/utilities/styles'
 import type { _Post } from '@/utilities/types'
 import { Box, Link, Typography } from '@mui/material'
 import { PortableText } from '@portabletext/react'
@@ -50,12 +50,7 @@ const ConditionalLink: FC<_ConditionalLinkProps> = ({ children, currentLink, isL
   )
 }
 
-const Description: FC<_DescriptionProps> = ({ description }) =>
-  description && (
-    <Box sx={{ a: { color: BLACK } }}>
-      <PortableText components={SERIALIZERS} value={description} />
-    </Box>
-  )
+const Description: FC<_DescriptionProps> = ({ description }) => description && <PortableText components={SERIALIZERS} value={description} />
 
 export const Summary: FC<_SummaryProps> = ({ classes, isLink = false, post, styles }) => {
   const [currentLink, setCurrentLink] = useState('')
@@ -67,7 +62,7 @@ export const Summary: FC<_SummaryProps> = ({ classes, isLink = false, post, styl
   return (
     <Box className={classes} onMouseOut={handleMouseOut} style={styles} sx={{ mb: 0.75, mx: 0.375, width: 314 }}>
       <ConditionalLink currentLink={currentLink} isLink={isLink} post={post} setCurrentLink={setCurrentLink}>
-        <Box sx={{ bgcolor: WHITE, border: '0.5px solid', borderRadius: 0.5, img: { height: 'auto', width: '100%' }, p: 1.5 }}>
+        <Box sx={{ bgcolor: WHITE, border: '0.5px solid', borderRadius: 0.5, p: 1.5, ...SX_CONTENT }}>
           <Image alt={post.title} height={height} src={sanityImageUrl(post.thumbnailImage)} width={width} />
 
           <Title isTitleInBody={post.titleInBody} title={post.title} />
