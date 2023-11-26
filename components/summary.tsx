@@ -40,8 +40,7 @@ const ConditionalLink: FC<_ConditionalLinkProps> = ({ children, currentLink, isL
       sx={{
         '> div': { transition: 'transform 0.1s', ...(post.slug.current === currentLink.slice(1) && { transform: 'scale(0.99)' }) },
         color: BLACK,
-        display: 'block',
-        textDecoration: 'none'
+        display: 'block'
       }}
     >
       {children}
@@ -53,7 +52,7 @@ const ConditionalLink: FC<_ConditionalLinkProps> = ({ children, currentLink, isL
 
 const Description: FC<_DescriptionProps> = ({ description }) =>
   description && (
-    <Box sx={{ a: { textDecoration: 'underline' } }}>
+    <Box sx={{ a: { color: BLACK } }}>
       <PortableText components={SERIALIZERS} value={description} />
     </Box>
   )

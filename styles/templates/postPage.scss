@@ -46,14 +46,12 @@
   }
 
   &__heading { margin-top: 12px; }
-
-  a { text-decoration: underline; }
 }
 
 .extra {
   background: #fff; border: 0.5px solid #000; border-radius: 2px; clear: left; float: left; margin: 0 3px 6px 0; padding: 12px; transition: opacity 0.5s; width: 314px;
 
-  &__link { color: #000; display: block; margin: 4px 0 2px; text-decoration: underline; }
+  &__link { color: #000; display: block; margin: 4px 0 2px; }
 
   &--before, &--during { opacity: 0; }
 

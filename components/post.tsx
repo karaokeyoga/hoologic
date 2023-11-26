@@ -3,6 +3,7 @@
 import { SERIALIZERS } from '@/components/serializers'
 import { Summary } from '@/components/summary'
 import { useAppContext } from '@/hooks/useAppContext'
+import { BLACK } from '@/utilities/styles'
 import type { _Position, _Post } from '@/utilities/types'
 import { Box } from '@mui/material'
 import { PortableText } from '@portabletext/react'
@@ -65,7 +66,7 @@ const Css: FC<_CssProps> = ({ css }) => (css ? <style>{css}</style> : null)
 const Extra: FC<_ExtraProps> = ({ mounted, post, postPosition }) =>
   post.extra ? (
     <Box className={getClasses('extra', mounted, postPosition)}>
-      <Box className="extra__div">
+      <Box className="extra__div" sx={{ a: { color: BLACK } }}>
         <PortableText components={SERIALIZERS} value={post.extra} />
       </Box>
     </Box>
