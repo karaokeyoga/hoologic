@@ -50,10 +50,10 @@ export const Summary: FC<_SummaryProps> = ({ classes, isLink = false, post, styl
 
   const { height, width } = getImageDimensions(post.thumbnailImage)
 
-  const handleMouseLeave = () => setCurrentLink('')
+  const handleMouseOut = () => setCurrentLink('')
 
   return (
-    <Box className={classes} onMouseLeave={handleMouseLeave} style={styles}>
+    <Box className={classes} onMouseOut={handleMouseOut} style={styles}>
       <ConditionalLink currentLink={currentLink} isLink={isLink} post={post} setCurrentLink={setCurrentLink} />
 
       <Box className="summary__inner">
