@@ -5,12 +5,6 @@
 
   &__image { border-radius: 2px; width: 290px; }
 
-  &__inner {
-    a { pointer-events: auto; }
-
-    img { height: auto; width: 100%; }
-  }
-
   &__link { border-radius: 2px; bottom: 0; cursor: pointer; left: 0; position: absolute; right: 0; top: 0; }
 
   &--after {

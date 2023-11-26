@@ -3,12 +3,12 @@ import { useAppContext } from '@/hooks/useAppContext'
 import { sanityImageUrl } from '@/utilities/sanity'
 import { WHITE } from '@/utilities/styles'
 import type { _Post } from '@/utilities/types'
-import { Box, Typography } from '@mui/material'
+import { Box, Link, Typography } from '@mui/material'
 import { PortableText } from '@portabletext/react'
 import { getImageDimensions } from '@sanity/asset-utils'
 import classNames from 'classnames'
 import Image from 'next/image'
-import Link from 'next/link'
+import RouterLink from 'next/link'
 import React, { Dispatch, FC, MouseEvent, SetStateAction, useState } from 'react'
 
 // types
@@ -36,7 +36,16 @@ const ConditionalLink: FC<_ConditionalLinkProps> = ({ currentLink, isLink, post,
 
   if (!isLink) return null
 
-  return <Link className={classes()} href={`/${post.slug.current}`} onClick={handleClick} onMouseOver={handleMouseOver} />
+  return (
+    <Link
+      className={classes()}
+      component={RouterLink}
+      href={`/${post.slug.current}`}
+      onClick={handleClick}
+      onMouseOver={handleMouseOver}
+      sx={{ pointerEvents: 'auto' }}
+    />
+  )
 }
 
 const Description: FC<_DescriptionProps> = ({ description }) =>
@@ -57,7 +66,7 @@ export const Summary: FC<_SummaryProps> = ({ classes, isLink = false, post, styl
     <Box className={classes} onMouseOut={handleMouseOut} style={styles} sx={{ mb: 0.75, mx: 0.375, width: 314 }}>
       <ConditionalLink currentLink={currentLink} isLink={isLink} post={post} setCurrentLink={setCurrentLink} />
 
-      <Box className="summary__inner" sx={{ bgcolor: WHITE, border: '0.5px solid', borderRadius: 0.5, p: 1.5, pointerEvents: 'none', position: 'relative' }}>
+      <Box sx={{ bgcolor: WHITE, border: '0.5px solid', borderRadius: 0.5, img: { height: 'auto', width: '100%' }, p: 1.5, pointerEvents: 'none' }}>
         <Image alt={post.title} height={height} src={sanityImageUrl(post.thumbnailImage)} width={width} />
 
         <Title isTitleInBody={post.titleInBody} title={post.title} />
