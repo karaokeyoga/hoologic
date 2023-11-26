@@ -12,7 +12,7 @@ import { FC } from 'react'
 // constants
 
 const SX = {
-  '::after': { bottom: 3, color: blueGrey[50], content: ['', "' (株'", "' 株式会社'"], fontSize: 57, ml: 0.5, position: 'relative' },
+  '::after': { bottom: 3, color: blueGrey[50], content: ['', '', "'株式会社'"], fontSize: 57, ml: 0.5, position: 'relative' },
   color: WHITE,
   fontFamily: NOTO_SANS_JP.style.fontFamily,
   fontSize: 65,
@@ -46,7 +46,7 @@ const Inner: FC = () => (
     <>Hoo</>
 
     <Box component="span" sx={{ display: ['none', 'inline'] }}>
-      <> Logic</>
+      <> Logic </>
     </Box>
   </>
 )

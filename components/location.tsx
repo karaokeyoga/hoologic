@@ -7,19 +7,23 @@ import { FC } from 'react'
 // constants
 
 const SX = { fontFamily: NOTO_SANS_JP.style.fontFamily, fontWeight: 'bold', textShadow: `-0.5px 0 #000, 0 0.5px #000, 0.5px 0 #000, 0 -0.5px #000` }
-const SX_JAPAN = { color: WHITE, fontSize: 65, textTransform: 'uppercase' }
-const SX_TOKYO = { bottom: 3, color: blueGrey[50], display: ['none', 'inline'], fontSize: 57, position: 'relative' }
+const SX_JAPAN = { bottom: 3, color: blueGrey[50], display: ['none', 'none', 'inline'], fontSize: 57, position: 'relative' }
+const SX_TOKYO = { color: WHITE, fontSize: 65, textTransform: 'uppercase' }
 
 // components
 
 export const Location: FC = () => (
-  <Box sx={{ position: 'absolute', right: -2.5 }}>
-    <Box component="span" sx={{ ...SX, ...SX_TOKYO } as SxProps}>
-      東京
+  <Box sx={{ position: 'absolute', right: 0.5 }}>
+    <Box component="span" sx={{ ...SX, ...SX_TOKYO }}>
+      To
+      <Box component="span" sx={{ position: 'relative', right: 4 }}>
+        k
+      </Box>
+      yo
     </Box>
 
-    <Box component="span" sx={{ ...SX, ...SX_JAPAN }}>
-      <> Japan</>
+    <Box component="span" sx={{ ...SX, ...SX_JAPAN } as SxProps}>
+      <> 日本</>
     </Box>
   </Box>
 )
