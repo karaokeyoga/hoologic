@@ -3,9 +3,9 @@
 import { SERIALIZERS } from '@/components/serializers'
 import { Summary } from '@/components/summary'
 import { useAppContext } from '@/hooks/useAppContext'
-import { SX_CONTENT } from '@/utilities/styles'
+import { SX_CONTENT, WHITE } from '@/utilities/styles'
 import type { _Position, _Post } from '@/utilities/types'
-import { Box } from '@mui/material'
+import { Box, SxProps } from '@mui/material'
 import { PortableText } from '@portabletext/react'
 import React, { FC, RefObject, useEffect, useState } from 'react'
 
@@ -16,6 +16,23 @@ type _CssProps = { css: string }
 type _ExtraProps = { mounted: boolean; post: _Post; postPosition: any }
 type _HtmlProps = { html: string }
 type _PostProps = { post: _Post }
+
+// constants
+
+const SX_EXTRA = {
+  bgcolor: WHITE,
+  border: '0.5px solid',
+  borderRadius: 0.5,
+  clear: ['left', 'none', 'left'],
+  float: 'left',
+  mb: [0.75, 0],
+  ml: [0, 0.375, 0],
+  mr: [0, 0, 0.375],
+  p: 1.5,
+  transition: 'opacity 0.5s',
+  width: 314,
+  ...SX_CONTENT
+}
 
 // functions
 
@@ -64,7 +81,7 @@ const Css: FC<_CssProps> = ({ css }) => (css ? <style>{css}</style> : null)
 
 const Extra: FC<_ExtraProps> = ({ mounted, post, postPosition }) =>
   post.extra ? (
-    <Box className={getClasses('extra', mounted, postPosition)} sx={SX_CONTENT}>
+    <Box className={getClasses('extra', mounted, postPosition)} sx={SX_EXTRA as SxProps}>
       <PortableText components={SERIALIZERS} value={post.extra} />
     </Box>
   ) : null
