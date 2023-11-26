@@ -22,6 +22,5 @@ export type _Post = {
     }
   }
   title: string
-  titleInBody: boolean
   visible: boolean
 }

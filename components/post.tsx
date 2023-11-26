@@ -16,7 +16,6 @@ type _CssProps = { css: string }
 type _ExtraProps = { mounted: boolean; post: _Post; postPosition: any }
 type _HtmlProps = { html: string }
 type _PostProps = { post: _Post }
-type _TitleProps = { title: string; titleInBody: boolean }
 
 // functions
 
@@ -72,8 +71,6 @@ const Extra: FC<_ExtraProps> = ({ mounted, post, postPosition }) =>
 
 const Html: FC<_HtmlProps> = ({ html }) => (html ? <Box dangerouslySetInnerHTML={{ __html: html }} /> : null)
 
-const Title: FC<_TitleProps> = ({ title, titleInBody }) => (titleInBody ? <h2 className="post__heading">{title}</h2> : null)
-
 // components
 
 export const Post: FC<_PostProps> = ({ post }) => {
@@ -99,8 +96,6 @@ export const Post: FC<_PostProps> = ({ post }) => {
         <Extra mounted={mounted} post={post} postPosition={postPosition} />
 
         <Box className={getClasses('post__content', mounted, postPosition, post.centerBody)} sx={SX_CONTENT}>
-          <Title title={post.title} titleInBody={post.titleInBody} />
-
           <Block blocks={post.body} />
 
           <Html html={post.html} />

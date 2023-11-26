@@ -15,7 +15,7 @@ import React, { Dispatch, FC, MouseEvent, ReactNode, SetStateAction, useState } 
 type _ConditionalLinkProps = { children: ReactNode; currentLink: string; isLink: boolean; post: any; setCurrentLink: Dispatch<SetStateAction<string>> }
 type _DescriptionProps = { description: any }
 type _SummaryProps = { classes?: string; isLink?: boolean; post: _Post; styles?: any }
-type _TitleProps = { isTitleInBody: boolean; title: string }
+type _TitleProps = { title: string }
 
 // components
 
@@ -65,7 +65,7 @@ export const Summary: FC<_SummaryProps> = ({ classes, isLink = false, post, styl
         <Box sx={{ bgcolor: WHITE, border: '0.5px solid', borderRadius: 0.5, p: 1.5, ...SX_CONTENT }}>
           <Image alt={post.title} height={height} src={sanityImageUrl(post.thumbnailImage)} width={width} />
 
-          <Title isTitleInBody={post.titleInBody} title={post.title} />
+          <Title title={post.title} />
 
           <Description description={post.description} />
         </Box>
@@ -74,9 +74,8 @@ export const Summary: FC<_SummaryProps> = ({ classes, isLink = false, post, styl
   )
 }
 
-const Title: FC<_TitleProps> = ({ isTitleInBody, title }) =>
-  isTitleInBody ? null : (
-    <Typography sx={{ fontSize: 19, fontWeight: 700, mb: 1.5, mt: 2.25, textTransform: 'uppercase' }} variant="h1">
-      {title}
-    </Typography>
-  )
+const Title: FC<_TitleProps> = ({ title }) => (
+  <Typography sx={{ fontSize: 19, fontWeight: 700, mb: 1.5, mt: 2.25, textTransform: 'uppercase' }} variant="h1">
+    {title}
+  </Typography>
+)
