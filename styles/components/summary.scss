@@ -1,12 +1,4 @@
 .summary {
-  & figure { margin: 0; }
-
-  &__description a { text-decoration: underline; }
-
-  &__image { border-radius: 2px; width: 290px; }
-
-  &__link { border-radius: 2px; bottom: 0; cursor: pointer; left: 0; position: absolute; right: 0; top: 0; }
-
   &--after {
     float: left; margin-left: 0;
 

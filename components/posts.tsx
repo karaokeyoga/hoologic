@@ -3,6 +3,7 @@
 import { Summary } from '@/components/summary'
 import { PATHNAME_ABOUT, PATHNAME_PERSON, PATHNAME_ROOT } from '@/utilities/general'
 import type { _Post } from '@/utilities/types'
+import { Box } from '@mui/material'
 // import { useWindowSize } from '@react-hook/window-size'
 import { usePathname } from 'next/navigation'
 import React, { FC, useEffect, useMemo, useRef, useState } from 'react'
@@ -51,10 +52,12 @@ export const Posts: FC<_PostsProps> = ({ posts: initialPosts }) => {
   const filteredPosts = useMemo(() => ([PATHNAME_ABOUT, PATHNAME_PERSON, PATHNAME_ROOT].includes(pathname) ? posts : posts.slice(0, -1)), [pathname, posts])
 
   return (
-    <Masonry className="posts posts--mounted" ref={masonryRef}>
-      {filteredPosts.map(post => (
-        <Summary classes="summary" isLink key={post._id} post={post} />
-      ))}
-    </Masonry>
+    <Box sx={{ maxWidth: '100%', mb: 3.25, minWidth: 320, mx: 'auto' }}>
+      <Masonry ref={masonryRef}>
+        {filteredPosts.map(post => (
+          <Summary classes="summary" isLink key={post._id} post={post} />
+        ))}
+      </Masonry>
+    </Box>
   )
 }
