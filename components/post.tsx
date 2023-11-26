@@ -36,15 +36,13 @@ const SX_EXTRA = {
 
 // functions
 
-const getClasses = (item: string, mounted: boolean, postPosition?: _Position, centerBody?: boolean) => {
+const getClasses = (item: string, mounted: boolean, postPosition?: _Position) => {
   let classes = item
 
   if (postPosition && window.matchMedia('(min-width: 640px)').matches) {
     if (mounted) classes += ` ${item}--during`
     else classes += ` ${item}--before`
   } else classes += ` ${item}--after`
-
-  if (centerBody) classes += ` ${item}--center`
 
   return classes
 }
@@ -112,7 +110,7 @@ export const Post: FC<_PostProps> = ({ post }) => {
 
         <Extra mounted={mounted} post={post} postPosition={postPosition} />
 
-        <Box className={getClasses('post__content', mounted, postPosition, post.centerBody)} sx={SX_CONTENT}>
+        <Box className={getClasses('post__content', mounted, postPosition)} sx={SX_CONTENT}>
           <Block blocks={post.body} />
 
           <Html html={post.html} />
