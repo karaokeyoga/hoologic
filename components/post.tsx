@@ -13,7 +13,7 @@ import React, { FC, RefObject, useEffect, useState } from 'react'
 
 type _BlockProps = { blocks: any }
 type _CssProps = { css: string }
-type _ExtraProps = { post: _Post }
+type _ExtraProps = { mounted: boolean; post: _Post; postPosition: any }
 type _HtmlProps = { html: string }
 type _PostProps = { post: _Post }
 
@@ -77,9 +77,9 @@ const Block: FC<_BlockProps> = ({ blocks }) => (blocks ? <PortableText component
 
 const Css: FC<_CssProps> = ({ css }) => (css ? <style>{css}</style> : null)
 
-const Extra: FC<_ExtraProps> = ({ post }) =>
+const Extra: FC<_ExtraProps> = ({ mounted, post, postPosition }) =>
   post.extra ? (
-    <Box sx={SX_EXTRA as SxProps}>
+    <Box className={getClasses('extra', mounted, postPosition)} sx={SX_EXTRA as SxProps}>
       <PortableText components={SERIALIZERS} value={post.extra} />
     </Box>
   ) : null
@@ -108,7 +108,7 @@ export const Post: FC<_PostProps> = ({ post }) => {
 
         <Summary classes={getClasses('summary', mounted, postPosition)} post={post} styles={styles(allRef, mounted, postPosition)} />
 
-        <Extra post={post} />
+        <Extra mounted={mounted} post={post} postPosition={postPosition} />
 
         <Box className={getClasses('post__content', mounted, postPosition)} sx={SX_CONTENT}>
           <Block blocks={post.body} />
