@@ -20,7 +20,7 @@ type _TitleProps = { title: string }
 // functions
 
 const getClasses = (isLink: boolean, isMounted: boolean, postPosition?: _Position) =>
-  isLink ? undefined : postPosition && window.matchMedia('(min-width: 960px)').matches ? (isMounted ? 'summary--during' : 'summary--before') : 'summary--after'
+  isLink ? '' : isMounted && postPosition && window.matchMedia('(min-width: 960px)').matches ? 'summary--during' : 'summary--after'
 
 // components
 
