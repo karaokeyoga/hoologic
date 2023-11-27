@@ -59,17 +59,6 @@ const SX_POST_CONTENT_FN = ({ breakpoints }: Theme) => ({
 
 // functions
 
-const getClasses = (item: string, mounted: boolean, postPosition?: _Position) => {
-  let classes = item
-
-  if (postPosition && window.matchMedia('(min-width: 960px)').matches) {
-    if (mounted) classes += ` ${item}--during`
-    else classes += ` ${item}--before`
-  } else classes += ` ${item}--after`
-
-  return classes
-}
-
 const getLeftOffset = (allRef: RefObject<HTMLDivElement>) => {
   if (!allRef.current) return 0
 
@@ -116,11 +105,10 @@ const Html: FC<_HtmlProps> = ({ html }) => (html ? <Box dangerouslySetInnerHTML=
 
 export const Post: FC<_PostProps> = ({ post }) => {
   const { allRef, postPosition, setPostPosition } = useAppContext()
-
-  const [mounted, setMounted] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
-    setMounted(true)
+    setIsMounted(true)
 
     if (postPosition) {
       setTimeout(() => setPostPosition(undefined), 500)
@@ -132,7 +120,7 @@ export const Post: FC<_PostProps> = ({ post }) => {
       <Box className="post" sx={SX_POST_FN}>
         <Css css={post.css} />
 
-        <Summary classes={getClasses('summary', mounted, postPosition)} post={post} styles={styles(allRef, mounted, postPosition)} />
+        <Summary isMounted post={post} styles={styles(allRef, isMounted, postPosition)} />
 
         <Extra post={post} postPosition={postPosition} />
 
