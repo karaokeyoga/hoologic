@@ -65,14 +65,14 @@ export const Summary: FC<_SummaryProps> = ({ isLink = false, isMounted = false, 
       onMouseOut={handleMouseOut}
       style={styles}
       sx={{
+        mb: 0.75,
+        mx: 0.375,
+        width: 314,
         ...(isLink
           ? {}
           : isMounted && postPosition && window.matchMedia('(min-width: 960px)').matches
             ? { position: 'absolute', transition: 'left 0.5s, top 0.5s', zIndex: 668 }
-            : { float: 'left', ml: 0 }),
-        mb: 0.75,
-        mx: 0.375,
-        width: 314
+            : { float: 'left', ml: 0 })
       }}
     >
       <ConditionalLink currentLink={currentLink} isLink={isLink} post={post} setCurrentLink={setCurrentLink}>
