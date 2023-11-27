@@ -1,7 +1,6 @@
 import { All } from '@/components/all'
 import { AppContextProvider } from '@/components/appContextProvider'
 import { ThemeContextProvider } from '@/components/themeContextProvider'
-import '@/styles/index.scss'
 import { POSTS_QUERY } from '@/utilities/general'
 import { SANITY_CLIENT } from '@/utilities/sanity'
 import type { _Post } from '@/utilities/types'
