@@ -1,14 +1,11 @@
-.post__content { background: #fff; border: 0.5px solid #000; border-radius: 2px; height: 634px; margin-left: 320px; max-height: 634px; overflow-y: scroll; padding: 12px; width: 634px;
-
+.post__content {
   > div { margin-top: 24px;
-
     &:first-child { margin-top: 0; }
   }
 
   > img { height: auto; width: 100%; }
 
   p { margin: 12px 0 24px;
-
     &:first-child { margin-top: 0; }
   }
 

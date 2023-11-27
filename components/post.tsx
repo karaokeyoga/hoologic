@@ -42,6 +42,19 @@ const SX_POST = {
   width: [320, 640, 960]
 }
 
+const SX_POST_CONTENT = {
+  bgcolor: WHITE,
+  border: '0.5px solid',
+  borderRadius: 0.5,
+  height: 634,
+  maxHeight: 634,
+  ml: 40,
+  overflowY: 'scroll',
+  p: 1.5,
+  width: 634,
+  ...SX_CONTENT
+}
+
 // functions
 
 const getClasses = (item: string, mounted: boolean, postPosition?: _Position) => {
@@ -120,7 +133,7 @@ export const Post: FC<_PostProps> = ({ post }) => {
 
         <Extra post={post} postPosition={postPosition} />
 
-        <Box className={getClasses('post__content', mounted, postPosition)} sx={SX_CONTENT}>
+        <Box className="post__content" sx={SX_POST_CONTENT}>
           <Block blocks={post.body} />
           <Html html={post.html} />
           <Block blocks={post.bodyTwo} />
