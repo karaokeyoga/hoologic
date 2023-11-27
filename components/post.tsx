@@ -34,6 +34,14 @@ const SX_EXTRA = {
   ...SX_CONTENT
 }
 
+const SX_POST = {
+  '::after': { clear: 'both', content: "''", display: 'block' },
+  mx: 'auto',
+  pb: 4,
+  px: 0.375,
+  width: [320, 640, 960]
+}
+
 // functions
 
 const getClasses = (item: string, mounted: boolean, postPosition?: _Position) => {
@@ -74,7 +82,6 @@ const styles = (allRef: RefObject<HTMLDivElement>, mounted: boolean, postPositio
 // components
 
 const Block: FC<_BlockProps> = ({ blocks }) => (blocks ? <PortableText components={SERIALIZERS} value={blocks} /> : null)
-
 const Css: FC<_CssProps> = ({ css }) => (css ? <style>{css}</style> : null)
 
 const Extra: FC<_ExtraProps> = ({ post, postPosition }) =>
@@ -91,8 +98,6 @@ const Extra: FC<_ExtraProps> = ({ post, postPosition }) =>
 
 const Html: FC<_HtmlProps> = ({ html }) => (html ? <Box dangerouslySetInnerHTML={{ __html: html }} /> : null)
 
-// components
-
 export const Post: FC<_PostProps> = ({ post }) => {
   const { allRef, postPosition, setPostPosition } = useAppContext()
 
@@ -108,7 +113,7 @@ export const Post: FC<_PostProps> = ({ post }) => {
 
   return (
     <>
-      <Box className="post">
+      <Box className="post" sx={SX_POST}>
         <Css css={post.css} />
 
         <Summary classes={getClasses('summary', mounted, postPosition)} post={post} styles={styles(allRef, mounted, postPosition)} />
@@ -117,13 +122,9 @@ export const Post: FC<_PostProps> = ({ post }) => {
 
         <Box className={getClasses('post__content', mounted, postPosition)} sx={SX_CONTENT}>
           <Block blocks={post.body} />
-
           <Html html={post.html} />
-
           <Block blocks={post.bodyTwo} />
-
           <Html html={post.htmlTwo} />
-
           <Block blocks={post.bodyThree} />
         </Box>
       </Box>
