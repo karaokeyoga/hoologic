@@ -97,6 +97,7 @@ const styles = (allRef: RefObject<HTMLDivElement>, mounted: boolean, postPositio
 // components
 
 const Block: FC<_BlockProps> = ({ blocks }) => (blocks ? <PortableText components={SERIALIZERS} value={blocks} /> : null)
+
 const Css: FC<_CssProps> = ({ css }) => (css ? <style>{css}</style> : null)
 
 const Extra: FC<_ExtraProps> = ({ post, postPosition }) =>
@@ -135,11 +136,15 @@ export const Post: FC<_PostProps> = ({ post }) => {
 
         <Extra post={post} postPosition={postPosition} />
 
-        <Box className="post__content" sx={SX_POST_CONTENT_FN}>
+        <Box sx={SX_POST_CONTENT_FN}>
           <Block blocks={post.body} />
+
           <Html html={post.html} />
+
           <Block blocks={post.bodyTwo} />
+
           <Html html={post.htmlTwo} />
+
           <Block blocks={post.bodyThree} />
         </Box>
       </Box>
