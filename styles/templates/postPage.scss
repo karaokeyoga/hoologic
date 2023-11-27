@@ -23,7 +23,3 @@
     @media (max-width: 959px) and (min-width: 640px) { clear: both; margin-left: 0; }
   }
 }
-
-.extra {
-  @media (min-width: 960px) { &--before, &--during { opacity: 0; } }
-}
