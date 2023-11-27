@@ -5,7 +5,7 @@ import { Summary } from '@/components/summary'
 import { useAppContext } from '@/hooks/useAppContext'
 import { SX_CONTENT, WHITE } from '@/utilities/styles'
 import type { _Position, _Post } from '@/utilities/types'
-import { Box, SxProps } from '@mui/material'
+import { Box, SxProps, Theme } from '@mui/material'
 import { PortableText } from '@portabletext/react'
 import React, { FC, RefObject, useEffect, useState } from 'react'
 
@@ -34,18 +34,20 @@ const SX_EXTRA = {
   ...SX_CONTENT
 }
 
-const SX_POST = {
-  '::after': { clear: 'both', content: "''", display: 'block' },
+const SX_POST_FN = ({ breakpoints }: Theme) => ({
+  [breakpoints.only('xs')]: { '::after': { clear: 'both', content: "''", display: 'block' } },
   mx: 'auto',
   pb: 4,
   px: 0.375,
   width: [320, 640, 960]
-}
+})
 
-const SX_POST_CONTENT = {
+const SX_POST_CONTENT_FN = ({ breakpoints }: Theme) => ({
   bgcolor: WHITE,
   border: '0.5px solid',
   borderRadius: 0.5,
+  [breakpoints.only('sm')]: { clear: 'both', ml: 0 },
+  [breakpoints.only('xs')]: { clear: 'left', float: 'left', height: 314, maxHeight: 314, ml: 0, width: 314 },
   height: 634,
   maxHeight: 634,
   ml: 40,
@@ -53,7 +55,7 @@ const SX_POST_CONTENT = {
   p: 1.5,
   width: 634,
   ...SX_CONTENT
-}
+})
 
 // functions
 
@@ -126,14 +128,14 @@ export const Post: FC<_PostProps> = ({ post }) => {
 
   return (
     <>
-      <Box className="post" sx={SX_POST}>
+      <Box className="post" sx={SX_POST_FN}>
         <Css css={post.css} />
 
         <Summary classes={getClasses('summary', mounted, postPosition)} post={post} styles={styles(allRef, mounted, postPosition)} />
 
         <Extra post={post} postPosition={postPosition} />
 
-        <Box className="post__content" sx={SX_POST_CONTENT}>
+        <Box className="post__content" sx={SX_POST_CONTENT_FN}>
           <Block blocks={post.body} />
           <Html html={post.html} />
           <Block blocks={post.bodyTwo} />
