@@ -39,7 +39,7 @@ const SX_EXTRA = {
 const getClasses = (item: string, mounted: boolean, postPosition?: _Position) => {
   let classes = item
 
-  if (postPosition && window.matchMedia('(min-width: 640px)').matches) {
+  if (postPosition && window.matchMedia('(min-width: 960px)').matches) {
     if (mounted) classes += ` ${item}--during`
     else classes += ` ${item}--before`
   } else classes += ` ${item}--after`
