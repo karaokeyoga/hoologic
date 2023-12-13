@@ -35,8 +35,8 @@ export const Posts: FC<_PostsProps> = ({ posts: initialPosts }) => {
   const filteredPosts = useMemo(() => ([PATHNAME_ABOUT, PATHNAME_PERSON, PATHNAME_ROOT].includes(pathname) ? posts : posts.slice(0, -1)), [pathname, posts])
 
   return (
-    <Box sx={{ maxWidth: '100%', mb: 3.25, minWidth: 320, mx: 'auto' }}>
-      <Masonry style={{ position: 'relative' }}>
+    <Box sx={{ '> div': { position: 'relative' }, maxWidth: '100%', mb: 3.25, minWidth: 320, mx: 'auto' }}>
+      <Masonry>
         {filteredPosts.map(post => (
           <Summary isLink key={post._id} post={post} />
         ))}
