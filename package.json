@@ -39,7 +39,7 @@
     "lint-staged": "15.2.0",
     "next-sanity": "7.0.10",
     "prettier": "3.2.4",
-    "sass": "1.69.7",
+    "sass": "1.70.0",
     "typescript": "5.3.3"
   },
   "overrides": {
