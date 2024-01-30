@@ -37,7 +37,7 @@
     "eslint-plugin-react-hooks": "4.6.0",
     "husky": "9.0.6",
     "lint-staged": "15.2.0",
-    "next-sanity": "7.0.10",
+    "next-sanity": "7.0.17",
     "prettier": "3.2.4",
     "sass": "1.70.0",
     "typescript": "5.3.3"
