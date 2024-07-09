@@ -13,6 +13,11 @@ jobs:
           fetch-depth: 0
           ref: dev
           token: ${{ secrets.TOKEN_REPO }}
+
+      - name: Set up Git identity
+        run: |
+          git config user.email bryndyment@gmail.com
+          git config user.name "Bryn Dyment"
           
       - name: Merge and push
         run: |
