@@ -13,7 +13,7 @@ import { FC } from 'react'
 
 const PERSON = (
   <Box sx={{ height: 50, img: { borderRadius: 0.5, height: 'auto', width: '100%' }, width: 50 }}>
-    <Image alt="Bryn Dyment" src={profileImage} />
+    <Image alt="Bryn Dyment" loading="eager" src={profileImage} />
   </Box>
 )
 

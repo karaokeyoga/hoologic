@@ -77,7 +77,7 @@ export const Summary: FC<_SummaryProps> = ({ isLink = false, isMounted = false, 
     >
       <ConditionalLink currentLink={currentLink} isLink={isLink} post={post} setCurrentLink={setCurrentLink}>
         <Box sx={{ bgcolor: WHITE, border: '0.5px solid', borderRadius: 0.5, p: 1.5, ...SX_CONTENT }}>
-          <Image alt={post.title} height={height} src={sanityImageUrl(post.thumbnailImage)} width={width} />
+          <Image alt={post.title} height={height} loading="eager" src={sanityImageUrl(post.thumbnailImage)} width={width} />
 
           <Title title={post.title} />
 
