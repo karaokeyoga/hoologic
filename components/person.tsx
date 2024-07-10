@@ -4,7 +4,7 @@ import { useAppContext } from '@/hooks/useAppContext'
 import profileImage from '@/public/profile.png'
 import { PATHNAME_PERSON } from '@/utilities/general'
 import { Box, Link } from '@mui/material'
-import Image from 'next/image'
+// import Image from 'next/image'
 import RouterLink from 'next/link'
 import { usePathname } from 'next/navigation'
 import { FC } from 'react'
@@ -13,7 +13,8 @@ import { FC } from 'react'
 
 const PERSON = (
   <Box sx={{ height: 50, img: { borderRadius: 0.5, height: 'auto', width: '100%' }, width: 50 }}>
-    <Image alt="Bryn Dyment" loading="eager" src={profileImage} />
+    {/* <Image alt="Bryn Dyment" loading="eager" src={profileImage} /> */}
+    <img alt="Bryn Dyment" src={profileImage.src} />
   </Box>
 )
 

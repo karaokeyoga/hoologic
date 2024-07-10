@@ -1,7 +1,7 @@
 import { sanityImageUrl } from '@/utilities/sanity'
 import { Box } from '@mui/material'
 import { getImageDimensions } from '@sanity/asset-utils'
-import Image from 'next/image'
+// import Image from 'next/image'
 import Link from 'next/link'
 import React, { FC, ReactNode } from 'react'
 
@@ -29,7 +29,8 @@ const ExternalLinkSerializer: FC<_ExternalLinkSerializerProps> = ({ children, va
 const ImageSerializer: FC<_ImageSerializerProps> = ({ value }) => {
   const { height, width } = getImageDimensions(value)
 
-  return <Image alt="" height={height} loading="eager" src={sanityImageUrl(value)} width={width} />
+  // return <Image alt="" height={height} loading="eager" src={sanityImageUrl(value)} width={width} />
+  return <img alt="" height={height} src={sanityImageUrl(value)} width={width} />
 }
 
 const InternalLinkSerializer: FC<_InternalLinkSerializerProps> = ({ children, value }) => (value ? <Link href={value.slug}>{children}</Link> : null)

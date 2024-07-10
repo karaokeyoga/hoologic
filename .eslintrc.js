@@ -14,6 +14,7 @@ module.exports = {
   plugins: ['@typescript-eslint', 'prettier', 'react', 'react-hooks'],
   root: true,
   rules: {
+    '@next/next/no-img-element': 'off',
     '@typescript-eslint/no-unused-vars': 'warn',
     'no-unused-vars': 'off',
     'no-use-before-define': 'off',
