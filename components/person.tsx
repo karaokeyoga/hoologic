@@ -1,6 +1,6 @@
 'use client'
 
-import profileImage from '../../public/profile.png'
+import profileImage from '../../../../public/profile.png'
 import { useAppContext } from '../hooks/useAppContext'
 import { PATHNAME_PERSON } from '../utilities/general'
 import { Box, Link } from '@mui/material'
