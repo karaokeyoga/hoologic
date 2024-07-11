@@ -1,11 +1,11 @@
 'use client'
 
-import { SERIALIZERS } from '@/components/serializers'
-import { Summary } from '@/components/summary'
-import { useAppContext } from '@/hooks/useAppContext'
-import { SX_CONTENT, WHITE, WIDTH } from '@/utilities/styles'
-import type { _Position, _Post } from '@/utilities/types'
-import { Box, SxProps, Theme } from '@mui/material'
+import { useAppContext } from '../hooks/useAppContext'
+import { SX_CONTENT, WHITE, WIDTH } from '../utilities/styles'
+import type { _Position, _Post } from '../utilities/types'
+import { SERIALIZERS } from './serializers'
+import { Summary } from './summary'
+import { Box, SxProps, type Theme } from '@mui/material'
 import { PortableText } from '@portabletext/react'
 import React, { FC, RefObject, useEffect, useState } from 'react'
 

@@ -1,6 +1,6 @@
 'use client'
 
-import type { _Position } from '@/utilities/types'
+import type { _Position } from '../utilities/types'
 import { Dispatch, FC, ReactNode, RefObject, SetStateAction, createContext, useMemo, useRef, useState } from 'react'
 
 // types

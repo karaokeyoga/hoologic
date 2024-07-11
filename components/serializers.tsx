@@ -1,4 +1,4 @@
-import { sanityImageUrl } from '@/utilities/sanity'
+import { sanityImageUrl } from '../utilities/sanity'
 import { Box } from '@mui/material'
 import { getImageDimensions } from '@sanity/asset-utils'
 // import Image from 'next/image'

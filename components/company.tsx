@@ -1,8 +1,8 @@
 'use client'
 
-import { NOTO_SANS_JP } from '@/utilities/fonts'
-import { PATHNAME_ROOT } from '@/utilities/general'
-import { BLACK, WHITE } from '@/utilities/styles'
+import { NOTO_SANS_JP } from '../utilities/fonts'
+import { PATHNAME_ROOT } from '../utilities/general'
+import { BLACK, WHITE } from '../utilities/styles'
 import { Box, Link, Theme, Typography } from '@mui/material'
 import { blueGrey } from '@mui/material/colors'
 import RouterLink from 'next/link'

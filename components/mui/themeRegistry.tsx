@@ -2,8 +2,8 @@
 
 // https://github.com/mui/material-ui/blob/master/examples/material-ui-nextjs-ts/src/components/ThemeRegistry/ThemeRegistry.tsx
 
+import { THEME } from '../../utilities/theme'
 import NextAppDirEmotionCacheProvider from './emotionCache'
-import { THEME } from '@/utilities/theme'
 import CssBaseline from '@mui/material/CssBaseline'
 import { ThemeProvider } from '@mui/material/styles'
 import * as React from 'react'

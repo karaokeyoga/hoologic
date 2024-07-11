@@ -1,7 +1,7 @@
-import { Post } from '@/components/post'
-import { POSTS_QUERY } from '@/utilities/general'
-import { SANITY_CLIENT } from '@/utilities/sanity'
-import type { _Post } from '@/utilities/types'
+import { Post } from '../../components/post'
+import { POSTS_QUERY } from '../../utilities/general'
+import { SANITY_CLIENT } from '../../utilities/sanity'
+import type { _Post } from '../../utilities/types'
 import type { Metadata } from 'next/types'
 import { FC } from 'react'
 

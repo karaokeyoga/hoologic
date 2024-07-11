@@ -1,8 +1,8 @@
 'use client'
 
-import { useAppContext } from '@/hooks/useAppContext'
-import { PATHNAME_ABOUT } from '@/utilities/general'
-import { BLACK, RED, WHITE } from '@/utilities/styles'
+import { useAppContext } from '../hooks/useAppContext'
+import { PATHNAME_ABOUT } from '../utilities/general'
+import { BLACK, RED, WHITE } from '../utilities/styles'
 import { Box, Link } from '@mui/material'
 import RouterLink from 'next/link'
 import { usePathname } from 'next/navigation'

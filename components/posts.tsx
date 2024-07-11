@@ -1,8 +1,8 @@
 'use client'
 
-import { Summary } from '@/components/summary'
-import { PATHNAME_ABOUT, PATHNAME_PERSON, PATHNAME_ROOT } from '@/utilities/general'
-import type { _Post } from '@/utilities/types'
+import { PATHNAME_ABOUT, PATHNAME_PERSON, PATHNAME_ROOT } from '../utilities/general'
+import type { _Post } from '../utilities/types'
+import { Summary } from './summary'
 import { Box } from '@mui/material'
 import { usePathname } from 'next/navigation'
 import React, { FC, useEffect, useMemo, useState } from 'react'

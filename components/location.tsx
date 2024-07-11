@@ -1,5 +1,5 @@
-import { NOTO_SANS_JP } from '@/utilities/fonts'
-import { WHITE } from '@/utilities/styles'
+import { NOTO_SANS_JP } from '../utilities/fonts'
+import { WHITE } from '../utilities/styles'
 import { Box, SxProps, Typography } from '@mui/material'
 import { blueGrey } from '@mui/material/colors'
 import { FC } from 'react'
