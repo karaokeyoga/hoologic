@@ -1,6 +1,8 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+echo "Running pre-push hookzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"
+
 protected_branches='refs/heads/dev refs/heads/live'
 
 while read local_ref local_sha remote_ref remote_sha
