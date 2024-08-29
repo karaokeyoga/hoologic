@@ -1,13 +1,12 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-protected_branches=("dev" "live")
+protected_branches='refs/heads/dev refs/heads/live'
 
-current_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
-
-for branch in "${protected_branches[@]}"; do
-  if [ "$current_branch" = "$branch" ]; then
-    echo "Push to `$branch` branch disallowed"
+while read local_ref local_sha remote_ref remote_sha
+do
+  if [[ $protected_branches =~ $remote_ref ]]; then
+    echo "Push to $remote_ref branch disallowed"
     exit 1
   fi
 done
