@@ -23,7 +23,7 @@
     "@portabletext/react": "3.1.0",
     "@sanity/client": "6.22.1",
     "@types/lodash": "4.17.10",
-    "@types/node": "20.16.10",
+    "@types/node": "20.16.11",
     "@types/react": "18.3.11",
     "@types/react-dom": "18.3.0",
     "eslint": "9.12.0",
