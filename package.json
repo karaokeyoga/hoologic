@@ -22,7 +22,7 @@
     "@eslint/compat": "1.2.3",
     "@next/eslint-plugin-next": "15.0.3",
     "@portabletext/react": "3.1.0",
-    "@sanity/client": "6.23.0",
+    "@sanity/client": "6.24.1",
     "@types/lodash": "4.17.13",
     "@types/node": "22.10.1",
     "@types/react": "18.3.12",
