@@ -18,8 +18,8 @@ importers:
         specifier: 11.14.0
         version: 11.14.0(@emotion/react@11.14.0(@types/react@19.0.8)(react@19.0.0))(@types/react@19.0.8)(react@19.0.0)
       '@hoologic/use-context-guard':
-        specifier: 1.0.1
-        version: 1.0.1(react@19.0.0)
+        specifier: 1.0.2
+        version: 1.0.2(react@19.0.0)
       '@mui/material':
         specifier: 6.4.2
         version: 6.4.2(@emotion/react@11.14.0(@types/react@19.0.8)(react@19.0.0))(@emotion/styled@11.14.0(@emotion/react@11.14.0(@types/react@19.0.8)(react@19.0.0))(@types/react@19.0.8)(react@19.0.0))(@types/react@19.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -1169,10 +1169,10 @@ packages:
   '@floating-ui/utils@0.2.9':
     resolution: {integrity: sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg==}
 
-  '@hoologic/use-context-guard@1.0.1':
-    resolution: {integrity: sha512-bIsFbB4141ZBUse37XWBlHtfDdXqrUAclQ4eSSIXtj4cAh/Q1bfjBPv+shJnP25pR+QxAsDHFXGtze53iMexZA==}
+  '@hoologic/use-context-guard@1.0.2':
+    resolution: {integrity: sha512-ATdbX+Yn4I9SWQd5vtiaDa3FFoD2+Lt5MNFLouP/zc9tXltef3YI5k9WZmRz4y6qWDWee33mpQcoy6Rkw7bCbw==}
     peerDependencies:
-      react: ^16 || ^17 || ^18
+      react: '>=16.8'
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -6995,7 +6995,7 @@ snapshots:
 
   '@floating-ui/utils@0.2.9': {}
 
-  '@hoologic/use-context-guard@1.0.1(react@19.0.0)':
+  '@hoologic/use-context-guard@1.0.2(react@19.0.0)':
     dependencies:
       react: 19.0.0
 
