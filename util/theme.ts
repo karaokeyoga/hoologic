@@ -35,6 +35,6 @@ export const THEME = createTheme({
       }
     }
   },
-  palette: { background: { default: '#ece6dc' } },
+  palette: { background: { default: '#f3f3f3' } },
   typography: { fontFamily: 'lucida grande, lucida sans, -apple-system, sans-serif' }
 })
