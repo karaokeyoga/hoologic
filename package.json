@@ -19,7 +19,7 @@
     "sharp": "0.33.5"
   },
   "devDependencies": {
-    "@eslint/compat": "1.2.7",
+    "@eslint/compat": "1.2.8",
     "@next/eslint-plugin-next": "15.2.4",
     "@portabletext/react": "3.2.1",
     "@sanity/client": "6.28.4",
