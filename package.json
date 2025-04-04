@@ -16,7 +16,7 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-masonry-component": "6.3.0",
-    "sharp": "0.33.5"
+    "sharp": "0.34.0"
   },
   "devDependencies": {
     "@eslint/compat": "1.2.8",
