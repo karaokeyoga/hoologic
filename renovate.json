@@ -4,5 +4,7 @@
   "extends": [
     "config:recommended"
   ],
-  "schedule": ["* */6 * * *"]
+  "schedule": [
+    "* */6 * * *"
+  ]
 }
