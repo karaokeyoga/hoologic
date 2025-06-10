@@ -25,7 +25,7 @@
     "@sanity/client": "7.5.0",
     "@types/lodash": "4.17.17",
     "@types/node": "22.15.31",
-    "@types/react": "19.1.6",
+    "@types/react": "19.1.7",
     "@types/react-dom": "19.1.6",
     "eslint": "9.28.0",
     "eslint-config-prettier": "10.1.5",
