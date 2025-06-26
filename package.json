@@ -23,7 +23,7 @@
     "@next/eslint-plugin-next": "15.3.4",
     "@portabletext/react": "3.2.1",
     "@sanity/client": "7.6.0",
-    "@types/lodash": "4.17.18",
+    "@types/lodash": "4.17.19",
     "@types/node": "22.15.33",
     "@types/react": "19.1.8",
     "@types/react-dom": "19.1.6",
