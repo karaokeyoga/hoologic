@@ -38,7 +38,7 @@
     "lint-staged": "16.1.2",
     "next-sanity": "9.12.3",
     "typescript": "5.8.3",
-    "typescript-eslint": "8.36.0"
+    "typescript-eslint": "8.37.0"
   },
   "pnpm": {
     "peerDependencyRules": {
