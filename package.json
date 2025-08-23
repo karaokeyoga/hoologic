@@ -27,7 +27,7 @@
     "@types/node": "22.17.2",
     "@types/react": "19.1.11",
     "@types/react-dom": "19.1.7",
-    "eslint": "9.33.0",
+    "eslint": "9.34.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-config-standard": "17.1.0",
     "eslint-plugin-perfectionist": "4.15.0",
