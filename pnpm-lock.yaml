@@ -55,8 +55,8 @@ importers:
         specifier: 15.4.7
         version: 15.4.7
       '@portabletext/react':
-        specifier: 3.2.1
-        version: 3.2.1(react@19.1.1)
+        specifier: 3.2.4
+        version: 3.2.4(react@19.1.1)
       '@sanity/client':
         specifier: 7.8.2
         version: 7.8.2
@@ -1614,8 +1614,8 @@ packages:
   '@portabletext/patches@1.1.2':
     resolution: {integrity: sha512-ENGxLD+AJc2Uq2GfDCNmeU/9dT50VYBMX5zKYyPVw2/OYDEpLYDlEZBjh0v0RqEuE2ecUu+eBaHf4PE6C0CoQQ==}
 
-  '@portabletext/react@3.2.1':
-    resolution: {integrity: sha512-RyFLk6u2q6ZyABTdOk+xoNR2Tq/4fcQFEWayNk4Kbd3gHpUUTabqOrDMChcmG6C7YVLSpwIEBwHoBVcy4vK/hA==}
+  '@portabletext/react@3.2.4':
+    resolution: {integrity: sha512-Gq0BaIBw6PMXnN1M9clG7vOa952O4F+CTfANLH/NaxiH5eI1sOx3IoGoGLnPPUTxCKq3F380gz4ycz6WzMtu0Q==}
     engines: {node: ^14.13.1 || >=16.0.0}
     peerDependencies:
       react: ^17 || ^18 || >=19.0.0-0
@@ -1628,8 +1628,16 @@ packages:
     resolution: {integrity: sha512-5wj+oUaCmHm9Ay1cytPmT1Yc0SrR1twwUIc0qNQ3MtaXaNMPw99Gjt1NcA34yfyKmEf/TAB2NiiT72jFxdddIQ==}
     engines: {node: ^14.13.1 || >=16.0.0}
 
+  '@portabletext/toolkit@2.0.18':
+    resolution: {integrity: sha512-m3v2WwKQTNNk5BFZlUuPuCW0Zi6iDSpwrium4Ej5L2FHDXhFuwAyEMPXDrvwPvqjES/oJzcwmdKLMhYa44T9BQ==}
+    engines: {node: ^14.13.1 || >=16.0.0}
+
   '@portabletext/types@2.0.13':
     resolution: {integrity: sha512-5xk5MSyQU9CrDho3Rsguj38jhijhD36Mk8S6mZo3huv6PM+t4M/5kJN2KFIxgvt4ONpvOEs1pVIZAV0cL0Vi+Q==}
+    engines: {node: ^14.13.1 || >=16.0.0 || >=18.0.0}
+
+  '@portabletext/types@2.0.15':
+    resolution: {integrity: sha512-2e6i2gSQsrA/5OL5Gm4/9bxB9MNO73Fa47zj+0mT93xkoQUCGCWX5fZh1YBJ86hszaRYlqvqG08oULxvvPPp/Q==}
     engines: {node: ^14.13.1 || >=16.0.0 || >=18.0.0}
 
   '@rexxars/react-json-inspector@9.0.1':
@@ -7578,10 +7586,10 @@ snapshots:
       '@sanity/diff-match-patch': 3.2.0
       lodash: 4.17.21
 
-  '@portabletext/react@3.2.1(react@19.1.1)':
+  '@portabletext/react@3.2.4(react@19.1.1)':
     dependencies:
-      '@portabletext/toolkit': 2.0.17
-      '@portabletext/types': 2.0.13
+      '@portabletext/toolkit': 2.0.18
+      '@portabletext/types': 2.0.15
       react: 19.1.1
 
   '@portabletext/to-html@2.0.13':
@@ -7593,7 +7601,13 @@ snapshots:
     dependencies:
       '@portabletext/types': 2.0.13
 
+  '@portabletext/toolkit@2.0.18':
+    dependencies:
+      '@portabletext/types': 2.0.15
+
   '@portabletext/types@2.0.13': {}
+
+  '@portabletext/types@2.0.15': {}
 
   '@rexxars/react-json-inspector@9.0.1(react@19.1.1)':
     dependencies:
@@ -10902,7 +10916,7 @@ snapshots:
 
   next-sanity@10.0.12(@emotion/is-prop-valid@1.3.1)(@sanity/client@7.8.2)(@sanity/types@3.72.1(@types/react@19.1.10))(next@15.4.7(@babel/core@7.26.7)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react-is@19.1.1)(react@19.1.1)(sanity@3.72.1(@emotion/is-prop-valid@1.3.1)(@types/babel__core@7.20.5)(@types/node@22.17.2)(@types/react@19.1.10)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(styled-components@6.1.15(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(terser@5.37.0)(typescript@5.9.2))(styled-components@6.1.15(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(typescript@5.9.2):
     dependencies:
-      '@portabletext/react': 3.2.1(react@19.1.1)
+      '@portabletext/react': 3.2.4(react@19.1.1)
       '@sanity/client': 7.8.2
       '@sanity/next-loader': 2.0.0(@sanity/types@3.72.1(@types/react@19.1.10))(next@15.4.7(@babel/core@7.26.7)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)
       '@sanity/preview-url-secret': 2.1.14(@sanity/client@7.8.2)
@@ -11730,7 +11744,7 @@ snapshots:
       '@juggle/resize-observer': 3.4.0
       '@portabletext/block-tools': 1.1.4(@sanity/types@3.72.1(@types/react@19.1.10))(@types/react@19.1.10)
       '@portabletext/editor': 1.28.0(@sanity/schema@3.72.1(@types/react@19.1.10)(debug@4.4.1))(@sanity/types@3.72.1(@types/react@19.1.10))(@types/react@19.1.10)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(rxjs@7.8.2)
-      '@portabletext/react': 3.2.1(react@19.1.1)
+      '@portabletext/react': 3.2.4(react@19.1.1)
       '@portabletext/toolkit': 2.0.17
       '@rexxars/react-json-inspector': 9.0.1(react@19.1.1)
       '@sanity/asset-utils': 2.2.1
