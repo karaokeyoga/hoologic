@@ -10,7 +10,7 @@
     "@hoologic/use-context-guard": "1.0.2",
     "@mui/material": "7.3.2",
     "@sanity/asset-utils": "2.3.0",
-    "@sanity/image-url": "1.1.0",
+    "@sanity/image-url": "1.2.0",
     "classnames": "2.5.1",
     "next": "15.5.2",
     "react": "19.1.1",
